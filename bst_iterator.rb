@@ -244,3 +244,71 @@ end
 # obj = BSTIterator.new(root)
 # param_1 = obj.next()
 # param_2 = obj.has_next()
+
+
+def gather_node_values(root, node_vals = [])
+
+    node_vals << root.val
+
+
+    if root.left
+        node_vals = current_successor_left = collect_left_subtree(root.left, node_vals)
+    end
+
+    if root.right
+        node_vals = current_successor_right = collect_right_subtree(root.right, node_vals)
+    end
+
+    return node_vals
+end
+
+def collect_left_subtree(node, node_vals)
+    if node
+      node = original_node
+      node_vals << node.val
+
+
+        while node.left
+            node = node.left
+
+            node_vals << node.val
+
+            if node.right
+                node_vals = collect_right_subtree node.right, node_vals
+            end
+        end
+
+        node = original_node
+        if node.right
+            node_vals = collect_right_subtree node.right, node_vals
+        end
+    end
+
+    node_vals
+end
+
+def collect_right_subtree(node, node_vals)
+    if node
+        original_node = node
+        node_vals << node.val
+
+
+        while node.right
+            node = node.right
+
+            node_vals << node.val
+
+            if node.left
+                node_vals = collect_left_subtree node.left, node_vals
+
+            end
+        end
+
+        node = original_node
+        if node.left
+            node_vals = collect_left_subtree node.left, node_vals
+        end
+    end
+
+    node_vals
+end
