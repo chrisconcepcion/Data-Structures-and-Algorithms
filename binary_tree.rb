@@ -31,6 +31,52 @@ module BinaryTree
   # NOTE: The answer is always the node with the next value higher than node, it
   # does not matter if there is a direct relationship or not.
 
+  # BFS - Breadth-first Search (Breadth meaning broad/wide)
+  # Transversal: Level-order
+  # Data Structure: Stack(Last in, First out or First in, Last out, samething).
+  # EZ Stack using array = array.push and array.pop
+
+  # DFS - Depth-first Search
+  # Transversal:  Pre-order, In-order, Post-order
+  # Data Structure: Queue(First in, First out)
+  # EZ Queue using array = array.shift(remove first item), array.push
+
+  # LEVEL ORDER Transversal:
+  # Visit Root
+  # go one level deep into all associated nodes
+  # and then go one level deep again and again until we are done.
+  # We are exploring one level at a time hence LEVEL order.
+  #       7
+  #     /  \
+  #    3    6
+  #   /    /  \
+  # 1     4    8
+  #
+  # The nodes are visited in the following order:
+  # 7, 3, 6, 1, 4, 8
+
+
+  # PREORDER Transversal:
+  # Visit root
+  # Visit Left subtree
+  # Visit Right subtree
+  # Essentially we always go left until we can't, then we
+  # revisit nodes in order of most recently visited and go right once and
+  # then left continuously and then right....
+  # Continue the same pattern recursively till all nodes have been visited.
+
+  #             2
+  #           /  \
+  #         7     5
+  #       /  \     \
+  #     2     11    9
+  #   /  \           \
+  # 6     5           4
+  #
+  # The nodes are visited in the following order:
+  # 2, 7, 2, 6, 5, 11, 5, 9, 4
+
+
   # Definition for a binary tree node.
 # class TreeNode
 #     attr_accessor :val, :left, :right
