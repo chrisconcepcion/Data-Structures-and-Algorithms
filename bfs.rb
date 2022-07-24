@@ -1,5 +1,8 @@
 module BFS
-    # returns an array of nodes for each level as an array
+    # Returns an array of nodes for each level in an array of arrays
+    # where each array within the array contains nodes for level.
+    # First array in the return array will be the root(level 1), next array will
+    # be level 2, next array level 3, etc....
     # e.g. [[level_1_node_1], [level_2_node_1, level_2_node_2], [level_3_node_1, level_3_node_2, etc....] ]
     def level_nodes(node)
         nodes = []
