@@ -73,6 +73,14 @@ module DynamicProgramming
     # set first value as nums as the key of memo[0] and the value as 1
     memo[0][nums[0]] = 1
 
+    # Lets explain how the memo hash is being used
+    # memo[0][key] = count_of_how_many_combinations_equates_to_the_key_value
+    # memo[0][6] = 1
+    # means we have a 1 combination that equates to 6
+    # Lets also pay attention to the index of memo.
+    # Memo index representations how many numbers have values from nums have been
+    # summed up. 0 being none being summed up, 1 being index 0 + 1(creating a single sum).
+
     # account for nums starting with 0 since -0 is also 0
     if nums[0] == 0
       # if nums[0] is 0, add 1 to memo[0][0] value, so it would become memo[0][0] = 1
@@ -84,8 +92,10 @@ module DynamicProgramming
 
     # we are starting from 1 since we have already setup memo[0] above
     1.upto(nums.length - 1) do |num_index|
+      # In this hash we are storing keys as the combined values and v
       hash = {}
       # memo_index starts at 0, while num_index starts at 1
+      # Do understand the memo keys are previous values. 
       memo[num_index - 1].keys.each do |memo_index|
         # if hash[memo_index - nums[num_index]] is undefined, set
         # hash[memo_index - nums[num_index]] = 0
@@ -98,7 +108,7 @@ module DynamicProgramming
         hash[memo_index - nums[num_index]] += memo[num_index - 1][memo_index]
         puts (hash[memo_index - nums[num_index]])
         hash[memo_index + nums[num_index]] += memo[num_index - 1][memo_index]
-        puts (hash[memo_index - nums[num_index)
+        puts (hash[memo_index - nums[num_index]])
         puts "next memo index"
       end
       puts (memo[num_index])
@@ -108,6 +118,8 @@ module DynamicProgramming
 
     end
     puts memo
+    # The reason why the last index of memo COULD have the count of target
+    # is because the requirements are the combinations of all values in num.
     memo[nums.length - 1][target] || 0
 end
 
