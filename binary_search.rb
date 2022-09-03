@@ -1,4 +1,4 @@
-module Binarysearch
+module BinarySearch
   # Source: https://medium.com/@andrewsouthard1/binary-search-implementation-in-ruby-9636a4bf373c
 
   # Cool ruby gem for binary search and binary index:
@@ -75,24 +75,24 @@ module Binarysearch
   # middle = (6 + 6)/2 = 6
   # array[middle] == n
 
-    def binary_search(n, array)
-        i = 0
-        final_index = array.size - 1
+  def binary_search(n, array)
+      i = 0
+      final_index = array.size - 1
 
-        while i <= final_index
-            # calculate middle
-            middle = (i + final_index)/2
-            if array[middle] == n
-                return true
-            elsif array[middle] < n
-                i = middle + 1
-            # when array[middle] > n
-            else
-                final_index = middle - 1
-            end
-        end
-        false
-    end
+      while i <= final_index
+          # calculate middle
+          middle = (i + final_index)/2
+          if array[middle] == n
+              return true
+          elsif array[middle] < n
+              i = middle + 1
+          # when array[middle] > n
+          else
+              final_index = middle - 1
+          end
+      end
+      false
+  end
 
     # testing for finding all values
     array = [1,2,6,7,8,44,56]
@@ -105,7 +105,7 @@ module Binarysearch
 
     # final test, testing for a non-available value
     results << binary_search(69, array)
-    
+
     # we should get 7 true consequentively and a false at the end
     results == [true, true, true, true, true, true, true, false]
 end
