@@ -1,13 +1,14 @@
 # Backtracking is an problem solving algorithm that uses a brute force for
 # finding a desired output.
 
+# You can indentify backtracking problems as they typically ask for a subset
+# of all possibilities.
+
 # The term backtracking suggests that if the current solution is not suitable,
 # then backtrack and try other solutions. Recursion is used in this approach.
 
 # Backtracking isn't exactly a specific algorithm but more of guidelines to
 # create an algorithm, so it is actually a technique.
-
-# Backtracking is important to know as it is a prerequiste to Dynamic Programming.
 
 # Source for this example: https://hackernoon.com/an-introduction-to-backtracking-in-ruby-fb5z32so
 module Backtracking

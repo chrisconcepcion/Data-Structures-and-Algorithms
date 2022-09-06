@@ -1,6 +1,12 @@
 # Greedy Algo Paradigm
 # Makes Greedy(Optimal) choice at every step in the problem.
 
+#NOTE:
+# The difference between dynamic programming and greedy algorithms is that with
+# dynamic programming, there are overlapping subproblems, and those subproblems
+# are solved using memoization. "Memoization" is the technique whereby solutions
+# to subproblems are used to solve other subproblems more quickly.
+
 # The greedy choice is based on some rule, something along the line
 # “select the largest number, select the smallest number”, etc…. We call this
 # the greedy criteria.
