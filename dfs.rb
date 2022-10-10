@@ -73,3 +73,53 @@ end
 #6
 #13
 #76
+
+### Practice Questions
+# https://leetcode.com/problems/minimum-depth-of-binary-tree/
+
+# Definition for a binary tree node.
+# class TreeNode
+#     attr_accessor :val, :left, :right
+#     def initialize(val = 0, left = nil, right = nil)
+#         @val = val
+#         @left = left
+#         @right = right
+#     end
+# end
+# @param {TreeNode} root
+# @return {Integer}
+def min_depth(root)
+
+    # We want to enumerate down the left and right child node and return the number of nodes transversed.
+
+    # Edge cases.
+    # When root is has no children.
+    if root == nil
+        return 0
+    else
+        return dfs_depth(root)depth_storage.min
+    end
+
+end
+
+def dfs_depth(node, depth = 1, depth_storage = [] )
+    # Create an array from child nodes and remove any nil values.
+    children = [node.left, node.right].compact
+    if children.empty?
+        # if there are no children, return the depth and it will be added to
+        # to the depth_storage.
+        return depth
+    else
+        # For each child do a deep first search.
+        children.each do |child|
+            # Do a deep first search on child.
+            depth_storage << dfs_depth(child, depth + 1)
+            if depth_storage.size > 1
+               return  depth_storage.min
+            end
+        end
+    end
+    
+    # Return the min depth
+    return depth_storage.min
+end
