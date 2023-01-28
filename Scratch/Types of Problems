@@ -1,0 +1,20 @@
+Types of Programming Problems:
+
+
+GREEDY
+Greedy problems usually look "find the minimum or maximum"  of
+something to do something. Or "find the minimum or maximum" of something to fit
+in some conditions.
+
+The idea of a greedy algo is to pick the locally optimal move for each step
+that will lead to the globally optimal solution.
+
+How do you prove your greedy algo provides globally optimal solution?
+
+Proof by contradiction https://en.wikipedia.org/wiki/Proof_by_contradiction
+
+To solve greedy problems
+
+1. think of interactions needed to get to desired result
+2. determine the local optimal move
+3. prove by Proof_by_contradiction
